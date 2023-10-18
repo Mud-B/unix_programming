@@ -23,11 +23,11 @@ int main(int argc, char* argv[]){
     else if (accmode == O_RDWR) printf("read write");
     else printf("unkown access mode");
 
-//     if(val & O_APPEND)      printf(", append");
-//     if(val & O_NONBLOCK)    printf(", nonblocking");
-// #if !defined(_POSIX_SOURCE) && define(O_SYNC)
-//     if(val & O_SYNC)
-// #endif
+    if(val & O_APPEND)      printf(", append");
+    if(val & O_NONBLOCK)    printf(", nonblocking");
+#if !defined(_POSIX_SOURCE) && defined(O_SYNC)
+    if(val & O_SYNC)        printf(", synchronous writes");
+#endif
     putchar('\n');
     exit(0);
 }
